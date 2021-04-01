@@ -3170,7 +3170,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 
 		setHeader('X-Requested-With', 'XMLHttpRequest');
 		setHeader('Accept', mime || '*/*');
-		if(!!(mime = settings.mimeType || mime)) {
+		if(mime = settings.mimeType || mime) {
 			if(mime.indexOf(',') > -1) {
 				mime = mime.split(',', 2)[0];
 			}
@@ -4948,7 +4948,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 						return;
 					}
 					//仅slider显示状态进行自动轮播
-					if (!!(slider.offsetWidth || slider.offsetHeight)) {
+					if (slider.offsetWidth || slider.offsetHeight) {
 						self.nextItem(true);
 						//下一个
 					}
@@ -7051,7 +7051,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 	};
 
 	function toggleEvents(element, isRemove) {
-		var method = !!isRemove ? 'removeEventListener' : 'addEventListener';
+		var method = isRemove ? 'removeEventListener' : 'addEventListener';
 		element[method]('drag', handleEvent);
 		element[method]('dragend', handleEvent);
 		element[method]('swiperight', handleEvent);
